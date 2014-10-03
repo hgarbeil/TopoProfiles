@@ -257,7 +257,7 @@ class myMainWindow (QtGui.QMainWindow) :
         for iang in range (0, 120,2) :
             radprof = self.ui.myim.getProfileAngle (xcent, ycent, iang, dist)
             acorr = self.autoCorrArray (radprof)
-            maxloc = np.max (acorr[18:])
+            maxloc = np.max (acorr[14:])
             xang [i] = iang
             xcorr [i] = maxloc
             #print iang, maxloc
