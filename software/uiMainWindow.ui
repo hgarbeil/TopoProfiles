@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1300</width>
+    <height>980</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="fullImWidget" name="fullimWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>351</width>
+      <height>921</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="fullResImWidget" name="fullResWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>10</y>
+      <width>911</width>
+      <height>591</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="myProfilePlot" name="plotWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>610</y>
+      <width>651</width>
+      <height>321</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="rawProfCB">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>690</y>
+      <width>241</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Raw Profile</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>FFT Magnitude</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Auto Correlation Fcn</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QTextEdit" name="resultsWindowText">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>720</y>
+      <width>241</width>
+      <height>111</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="outPrefixLE">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>870</y>
+      <width>161</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>/home/harold/workdir/zeph0/results/newprof0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>840</y>
+      <width>101</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Output Prefix :</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="outBrowseButton">
+    <property name="geometry">
+     <rect>
+      <x>1220</x>
+      <y>870</y>
+      <width>71</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Browse</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="saveFileButton">
+    <property name="geometry">
+     <rect>
+      <x>1220</x>
+      <y>900</y>
+      <width>71</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="plotDEMCB">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>660</y>
+      <width>131</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Plot DEM Data</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="radprofButton">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>610</y>
+      <width>241</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Radial Profile</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1300</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSet_Working_Directory"/>
+    <addaction name="separator"/>
+    <addaction name="actionInput_Image"/>
+    <addaction name="actionDEM_File"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionInput_Image">
+   <property name="text">
+    <string>Input Image</string>
+   </property>
+  </action>
+  <action name="actionDEM_File">
+   <property name="text">
+    <string>DEM File</string>
+   </property>
+  </action>
+  <action name="actionSet_Working_Directory">
+   <property name="text">
+    <string>Set Working Directory</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>fullImWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">fullImWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>fullResImWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">fullResImWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>myProfilePlot</class>
+   <extends>QWidget</extends>
+   <header location="global">myProfilePlot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
